@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc
 spec:
-  storageClassName: cloud-ssd
+  storageClassName: mylocalstorage
   accessModes:
     - ReadWriteOnce
   resources:
@@ -23,7 +23,7 @@ spec:
     path: "/mnt/some new/directory/structure/"
     type: DirectoryOrCreate
   capacity:
-    storage: 2Gi
+    storage: 3Gi
 
 
 
