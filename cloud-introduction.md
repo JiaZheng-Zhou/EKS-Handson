@@ -11,19 +11,24 @@
     ```
     **Step3：**
     ``` shell
-    eksctl create addon --name aws-ebs-csi-driver --cluster YourClusterNameHere --service-account-role-arn arn:aws:iam::$(aws sts get-caller-identity --query Account --output text):role/AmazonEKS_EBS_CSI_DriverRole --force
+    eksctl create addon --name aws-ebs-csi-driver --cluster YourClusterNameHere --service-account-role-arn arn:aws-cn:iam::$(aws sts get-caller-identity --query Account --output text):role/AmazonEKS_EBS_CSI_DriverRole --force
     ```
 2. 存储PersistentVolume应该使用**EBS**而不应该使用**HostPath**的本地存储方式
 3. Service层面Type不应该使用**NodePort**，如果是**对外开放**的服务，改变为**LoadBalancer**，如果是**集群内部**服务，更改为**ClusterIP**
 
 # 启动EKS集群
 ``` shell
-eksctl create cluster --name xxx --node-min=3
+eksctl create cluster --name xxx --nodes-min=3
 ```
 
 # 本地Kubectl连接到EKS集群
 ``` shell
 aws eks --region <region> update-kubeconfig --name <cluster-name>
+```
+
+# 清除EKS集群
+``` shell
+eksctl delete cluster <cluster-name> 
 ```
 
 
