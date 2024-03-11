@@ -117,8 +117,8 @@ spec:
         image: richardchesterwood/k8s-fleetman-webapp-angular:release2
         resources:
           limits:
-            memory: "800Mi"
-            cpu: "500m"
+            memory: "1200Mi"
+            cpu: "1000m"
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
