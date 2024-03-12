@@ -3,8 +3,6 @@
 kubectl get pods -o wide
 ```
 
-2. 
-
 
 
 
