@@ -17,9 +17,10 @@ spec:
         image: richardchesterwood/k8s-fleetman-queue:release2
         resources:
           limits:
-            memory: "960Mi"
+            memory: "600Mi"
             cpu: "300m"
-
+#1Mi = 1024Ki 1Ki = 1024bytes
+#1M = 1000K 1K = 1000bytes
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -39,7 +40,7 @@ spec:
         image: richardchesterwood/k8s-fleetman-position-simulator:release2
         resources:
           limits:
-            memory: "800Mi"
+            memory: "600Mi"
             cpu: "300m"
         env:
         - name: SPRING_PROFILES_ACTIVE
@@ -65,7 +66,7 @@ spec:
         image: richardchesterwood/k8s-fleetman-position-tracker:release3
         resources:
           limits:
-            memory: "800Mi"
+            memory: "600Mi"
             cpu: "300m"
         env:
         - name: SPRING_PROFILES_ACTIVE
@@ -91,8 +92,8 @@ spec:
         image: richardchesterwood/k8s-fleetman-api-gateway:release2
         resources:
           limits:
-            memory: "800Mi"
-            cpu: "600m"
+            memory: "900Mi"
+            cpu: "400m"
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
@@ -117,8 +118,8 @@ spec:
         image: richardchesterwood/k8s-fleetman-webapp-angular:release2
         resources:
           limits:
-            memory: "1200Mi"
-            cpu: "1000m"
+            memory: "600Mi"
+            cpu: "300m"
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
