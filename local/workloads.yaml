@@ -17,7 +17,7 @@ spec:
         image: richardchesterwood/k8s-fleetman-queue:release2
         resources:
           limits:
-            memory: "960Mi"
+            memory: "60Mi"
             cpu: "300m"
     
 ---
@@ -39,7 +39,7 @@ spec:
         image: richardchesterwood/k8s-fleetman-position-simulator:release2
         resources:
           limits:
-            memory: "800Mi"
+            memory: "600Mi"
             cpu: "300m"
         env:
         - name: SPRING_PROFILES_ACTIVE
@@ -65,7 +65,7 @@ spec:
         image: richardchesterwood/k8s-fleetman-position-tracker:release3
         resources:
           limits:
-            memory: "800Mi"
+            memory: "600Mi"
             cpu: "300m"
         env:
         - name: SPRING_PROFILES_ACTIVE
@@ -91,8 +91,8 @@ spec:
         image: richardchesterwood/k8s-fleetman-api-gateway:release2
         resources:
           limits:
-            memory: "800Mi"
-            cpu: "600m"
+            memory: "1000Mi"
+            cpu: "500m"
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
@@ -117,7 +117,7 @@ spec:
         image: richardchesterwood/k8s-fleetman-webapp-angular:release2
         resources:
           limits:
-            memory: "800Mi"
+            memory: "1000Mi"
             cpu: "500m"
         env:
         - name: SPRING_PROFILES_ACTIVE
