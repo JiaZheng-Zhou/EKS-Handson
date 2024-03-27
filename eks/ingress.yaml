@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: basic-routing
+  labels:
+    name: basic-routing
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: a0b59c17ac0ea46069e54af2aa9858d3-4a09ad5566e1fd3e.elb.cn-northwest-1.amazonaws.com.cn
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: fleetman-webapp
+            port: 
+              number: 30080
