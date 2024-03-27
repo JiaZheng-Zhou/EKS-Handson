@@ -16,7 +16,17 @@ kubectl autoscale deployment xxx --cpu-percent 400 --min 1 --max 4
 kubectl get hpa
 ```
 `可以通过上述命令查看拓展命令`
+4. 如何查看所有Namespace下的所有Pod
+```shell
+ kubectl get po --all-namespaces
+```
 
+5.连接到EKS
+```shell
+aws eks --region <region> update-kubeconfig --name <cluster_name>
+```
 
+6. 更改Workload或者Service
+``` kubectl edit svc xxx ```
 
 
